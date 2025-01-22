@@ -74,7 +74,8 @@ internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary
 
 public class MyFamily {
     public int Id { get; set; }
-    public string FirstName { get; set; }
-    public string SecondName { get; set; }
+
+    public string? FirstName { get; set; }
+    public string? SecondName { get; set; }
     public int Age { get; set; }
 }
