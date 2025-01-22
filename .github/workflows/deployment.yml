@@ -21,17 +21,17 @@ jobs:
           dotnet-version: 6.0
           
       - name: Install dependencies
-        run: dotnet restore ./MicroProductInventory.sln #--ignore-failed-sources #--property:BUILD_ENVIRONMENT=GitHubActions
+        run: dotnet restore /MicroProductInventory.sln #--ignore-failed-sources #--property:BUILD_ENVIRONMENT=GitHubActions
         #env:
         #  SKIP_DATABASE_UPGRADER: true
           
       - name: Build
-        run: dotnet build ./MicroProductInventory.sln --configuration Release --no-restore
+        run: dotnet build /MicroProductInventory.sln --configuration Release --no-restore
         env:
           SKIP_DATABASE_UPGRADER: true
 
       - name: Publish
-        run: dotnet publish ./MicroProductInventory.sln --configuration Release --no-restore
+        run: dotnet publish /MicroProductInventory.sln --configuration Release --no-restore
         
       # - name: Test with .NET
       #   run: dotnet test
@@ -43,4 +43,4 @@ jobs:
           server-computer-name: ${{ secrets.SERVER_COMPUTER_NAME }}
           server-username: ${{ secrets.SERVER_USERNAME }}
           server-password: ${{ secrets.SERVER_PASSWORD }}
-          source-path: '\bin\Release\net8.0'
+          source-path: '\MicroProductInventory\bin\Release\net8.0'
