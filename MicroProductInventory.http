@@ -1,0 +1,6 @@
+@MicroProductInventory_HostAddress = http://localhost:5300
+
+GET {{MicroProductInventory_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
