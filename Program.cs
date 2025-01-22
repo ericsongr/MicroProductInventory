@@ -26,9 +26,43 @@ app.MapGet("/me-weather", () =>
     return forecast;
 });
 
+app.MapGet("/ericson-kids", () =>
+{
+    var kids = new List<EricKid> { 
+        new EricKid{
+            Id = 1,
+            FirstName = "Eldric",
+            SecondName = "Gesua",
+            Age = 13
+        },
+        new EricKid{
+            Id = 2,
+            FirstName = "Gidion",
+            SecondName = "Neal",
+            Age = 6
+        },
+        new EricKid{
+            Id = 3,
+            FirstName = "Garet",
+            SecondName = "Glaiza",
+            Age = 2
+        },
+
+    };
+
+    return kids;
+});
+
 app.Run();
 
 internal record WeatherForecast(DateOnly Date, int TemperatureC, string? Summary)
 {
     public int TemperatureF => 32 + (int)(TemperatureC / 0.5556);
+}
+
+public class EricKid {
+    public int Id { get; set; }
+    public string FirstName { get; set; }
+    public string SecondName { get; set; }
+    public int Age { get; set; }
 }
